@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>飛行申請作成フォーム</title>
+    <script src="sfl-form.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="jquery.autoKana.js"></script>
+    <link rel="stylesheet" type="text/css" href="sfl-form.css">
+
+  </head>
+  <body>
+    <h1>飛行申請作成ツール</h1>
+      <form id="form1" action="#">
+      <dl>
+
+        <dt>開始日時</dt>
+          <dd><input type="date" id="st-date">
+          <input type="time" id="st-time"></dd>
+
+        <dt>終了日時</dt>
+          <dd><input type="date" id="fn-date">
+          <input type="time" id="fn-time"></dd>
+
+        <dt>飛行箇所</dt>
+          <dd><input type="checkbox" name="place" value="EAST街区">EAST街区
+          <input type="checkbox" name="place" value="体育館裏">体育館裏
+          <input type="checkbox" name="place" value="第一グラウンド（不使用時）">第一グラウンド（不使用時）
+          <input type="checkbox" name="place" value="メビウスリング内側">メビウスリング内側
+          <input type="checkbox" name="place" value="ゲストハウス前">ゲストハウス前
+          <input type="checkbox" name="place" value="テアトロン">テアトロン
+          <input type="checkbox" name="place" value="鴨池">鴨池
+          <input type="checkbox" name="place" value="大学院棟横">大学院棟横
+          <input type="checkbox" name="place" value="（WEST街区）">（WEST街区）
+          </dd>
+
+        <dt>使用者の氏名（1人目）</dt>
+        <dd>
+          <dl>
+            <dt>氏名</dt>
+              <dd><input type="text" name="kanji" id="name1-1" value=""></dd>
+            <dt>ふりがな（自動入力）</dt>
+              <dd><input type="text" name="furigana" id="name1-1-1" value=""></dd>
+            <dt>所属<dt>
+              <dd><input type="text" id="name1-2" value=""></dd>
+            <dt>肩書き</dt>
+              <dd><input type="text" id="name1-3" value=""></dd>
+          </dl>
+        </dd>
+
+        <dt>使用者の氏名（2人目）</dt>
+        <dd>
+          <dl>
+            <dt>氏名</dt>
+            <dd><input type="text" name="kanji" id="name2-1" value=""></dd>
+            <dt>ふりがな（自動入力）</dt>
+            <dd><input type="text" name="furigana" id="name2-1-1" value=""></dd>
+            <dt>所属</dt>
+            <dd><input type="text" id="name2-2" value=""></dd>
+            <dt>肩書き</dt>
+            <dd><input type="text" id="name2-3" value=""></dd>
+          </dl>
+        </dd>
+
+        <dt>使用者の氏名（3人目）</dt>
+        <dd>
+          <dl>
+            <dt>氏名</dt>
+            <dd><input type="text" name="kanji" id="name3-1" value=""></dd>
+            <dt>ふりがな（自動入力）</dt>
+            <dd><input type="text" name="furigana" id="name3-1-1" value=""></dd>
+            <dt>所属</dt>
+            <dd><input type="text" id="name3-2" value=""></dd>
+            <dt>肩書き</dt>
+            <dd><input type="text" id="name3-3" value=""></dd>
+          </dl>
+        </dd>
+
+        <dt>使用目的</dt>
+          <dd><input type="text" id="opp" value=""></dd>
+        <dt>使用機種</dt>
+          <dd><input type="text" id="model" value=""></dd>
+        <dt>機体番号</dt>
+          <dd><input type="text" id="model-num" value=""></dd>
+        <dt>緊急連絡先</dt>
+          <dd><input type="text" id="phone-num" value=""></dd>
+        <dt>備考</dt>
+          <dd><input type="text" id="other" value=""><br></dd>
+
+      </dl>
+
+    <input type="button" onclick="send()" value="表示">
+  </form>
+
+  <script>
+  $(function() {
+      $.fn.autoKana('#name1-1','#name1-1-1');
+      $.fn.autoKana('#name2-1','#name2-1-1');
+      $.fn.autoKana('#name3-1','#name3-1-1');
+  });
+  </script>
+
+  <div id="out-st-date"></div>
+  <div id="out-fn-date"></div>
+  <div id="out-place"></div><br>
+  <div id="responsible">
+    使用責任者（教職員）氏名（漢字・ふりがな）<br>
+    武田圭史・たけだけいじ<br>
+    所属 環境情報学部<br>
+    肩書 教授
+  </div><br>
+  使用者全員の氏名（漢字・ふりがな）<br><br>
+  <div id="out-name1-1"></div>
+  <div id="out-name1-2"></div>
+  <div id="out-name1-3"></div><br>
+
+  <div id="out-name2-1"></div>
+  <div id="out-name2-2"></div>
+  <div id="out-name2-3"></div><br>
+
+  <div id="out-name3-1"></div>
+  <div id="out-name3-2"></div>
+  <div id="out-name3-3"></div><br>
+
+  <div id="out-opp"></div>
+  <div id="out-model"></div>
+  <div id="out-model-num"></div>
+  <div id="hoken">
+    保険加入状況（賠償責任保険）学研賠・個人賠償 加入済み
+  </div>
+  <div id="out-phone-num"></div>
+  <div id="out-other"></div>
+
+
+  </body>
+</html>

@@ -1,0 +1,10 @@
+form{
+  margin: 0 auto;
+  line-height: 200%;
+  /* text-align: center; */
+}
+
+input[type="text"] {
+  width: 15em;
+  height: 1.5em;
+}
