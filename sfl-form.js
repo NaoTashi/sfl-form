@@ -17,7 +17,7 @@ function send(){
   var name3_2 = document.getElementById("name3-2").value;
   var name3_3 = document.getElementById("name3-3").value;
   var opp = document.getElementById("opp").value;
-  var model = document.getElementById("model").value;
+  // var model = document.getElementById("model").value;
   var model_num = document.getElementById("model-num").value;
   var phone_num = document.getElementById("phone-num").value;
   var other = document.getElementById("other").value;
@@ -37,12 +37,22 @@ function send(){
 			arr1.push(place[i].value);
 		}
 	}
-
   // --- ここまで
+
+  // --- ここから 機種選択
+
+  const arr2 = [];
+  const model = document.getElementsByName("model");
+
+  for (let i = 0; i < model.length; i++){
+    if(model[i].checked){ //(color2[i].checked === true)と同じ
+      arr2.push(model[i].value);
+    }
+  }
 
       document.getElementById("out-st-date").innerHTML = "開始日時 " + start_date + "-" + start_time;
       document.getElementById("out-fn-date").innerHTML = "終了日時 " + fin_date + "-" + fin_time;
-      document.getElementById("out-place").textContent = "飛行箇所 " + arr1;
+      document.getElementById("out-place").textContent = arr1;
       document.getElementById("out-name1-1").innerHTML = name1_1 + "・" + name1_1_1;
       document.getElementById("out-name1-2").innerHTML = "所属 " + name1_2;
       document.getElementById("out-name1-3").innerHTML = "肩書 " + name1_3;
