@@ -23,7 +23,7 @@ function send(){
   var other = document.getElementById("other").value;
 
   // --- ここから 時間チェック処理
-  if (start_date > fin_time || start_time > fin_time){
+  if (start_date > fin_date || start_time > fin_time){
     alert("日時が不正です");
   }
 
