@@ -17,15 +17,11 @@ input[type="text"] {
   }
 
   #checkbox1{
-    display: block;
-    float: left;
-    width: 110px;
+    white-space: nowrap;
   }
 
   #checkbox2{
-    display: block;
-    float: left;
-    width: 110px;
+    white-space: nowrap;
   }
 
 }
