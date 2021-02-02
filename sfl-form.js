@@ -17,7 +17,7 @@ function send(){
   var name3_2 = document.getElementById("name3-2").value;
   var name3_3 = document.getElementById("name3-3").value;
   var opp = document.getElementById("opp").value;
-  // var model = document.getElementById("model").value;
+  var model_id = document.getElementById("model").value;
   var model_num = document.getElementById("model-num").value;
   var phone_num = document.getElementById("phone-num").value;
   var other = document.getElementById("other").value;
@@ -50,6 +50,8 @@ function send(){
     }
   }
 
+  arr2.push(model_id);
+
       document.getElementById("out-st-date").innerHTML = "開始日時 " + start_date + "-" + start_time;
       document.getElementById("out-fn-date").innerHTML = "終了日時 " + fin_date + "-" + fin_time;
       document.getElementById("out-place").textContent = arr1;
@@ -69,7 +71,7 @@ function send(){
       }
 
       document.getElementById("out-opp").innerHTML = "使用目的 " + opp;
-      document.getElementById("out-model").innerHTML = "使用機種 " + model;
+      document.getElementById("out-model").textContent = "使用機種 " + arr2;
       document.getElementById("out-model-num").innerHTML = "機体番号 " + model_num;
       document.getElementById("out-phone-num").innerHTML = "緊急連絡先 " + phone_num;
 
